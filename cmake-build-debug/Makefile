@@ -111,17 +111,111 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named AVS_HW1
+# Target rules for targets named task
 
 # Build rule for target.
-AVS_HW1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 AVS_HW1
-.PHONY : AVS_HW1
+task: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 task
+.PHONY : task
 
 # fast build rule for target.
-AVS_HW1/fast:
-	$(MAKE) -f CMakeFiles/AVS_HW1.dir/build.make CMakeFiles/AVS_HW1.dir/build
-.PHONY : AVS_HW1/fast
+task/fast:
+	$(MAKE) -f CMakeFiles/task.dir/build.make CMakeFiles/task.dir/build
+.PHONY : task/fast
+
+#=============================================================================
+# Target rules for targets named transport
+
+# Build rule for target.
+transport: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 transport
+.PHONY : transport
+
+# fast build rule for target.
+transport/fast:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/build
+.PHONY : transport/fast
+
+bus.o: bus.cpp.o
+
+.PHONY : bus.o
+
+# target to build an object file
+bus.cpp.o:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/bus.cpp.o
+.PHONY : bus.cpp.o
+
+bus.i: bus.cpp.i
+
+.PHONY : bus.i
+
+# target to preprocess a source file
+bus.cpp.i:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/bus.cpp.i
+.PHONY : bus.cpp.i
+
+bus.s: bus.cpp.s
+
+.PHONY : bus.s
+
+# target to generate assembly for a file
+bus.cpp.s:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/bus.cpp.s
+.PHONY : bus.cpp.s
+
+car.o: car.cpp.o
+
+.PHONY : car.o
+
+# target to build an object file
+car.cpp.o:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/car.cpp.o
+.PHONY : car.cpp.o
+
+car.i: car.cpp.i
+
+.PHONY : car.i
+
+# target to preprocess a source file
+car.cpp.i:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/car.cpp.i
+.PHONY : car.cpp.i
+
+car.s: car.cpp.s
+
+.PHONY : car.s
+
+# target to generate assembly for a file
+car.cpp.s:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/car.cpp.s
+.PHONY : car.cpp.s
+
+container.o: container.cpp.o
+
+.PHONY : container.o
+
+# target to build an object file
+container.cpp.o:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/container.cpp.o
+.PHONY : container.cpp.o
+
+container.i: container.cpp.i
+
+.PHONY : container.i
+
+# target to preprocess a source file
+container.cpp.i:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/container.cpp.i
+.PHONY : container.cpp.i
+
+container.s: container.cpp.s
+
+.PHONY : container.s
+
+# target to generate assembly for a file
+container.cpp.s:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/container.cpp.s
+.PHONY : container.cpp.s
 
 main.o: main.cpp.o
 
@@ -129,7 +223,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/AVS_HW1.dir/build.make CMakeFiles/AVS_HW1.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/task.dir/build.make CMakeFiles/task.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -138,7 +232,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/AVS_HW1.dir/build.make CMakeFiles/AVS_HW1.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/task.dir/build.make CMakeFiles/task.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -147,8 +241,89 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/AVS_HW1.dir/build.make CMakeFiles/AVS_HW1.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/task.dir/build.make CMakeFiles/task.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+random.o: random.cpp.o
+
+.PHONY : random.o
+
+# target to build an object file
+random.cpp.o:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/random.cpp.o
+.PHONY : random.cpp.o
+
+random.i: random.cpp.i
+
+.PHONY : random.i
+
+# target to preprocess a source file
+random.cpp.i:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/random.cpp.i
+.PHONY : random.cpp.i
+
+random.s: random.cpp.s
+
+.PHONY : random.s
+
+# target to generate assembly for a file
+random.cpp.s:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/random.cpp.s
+.PHONY : random.cpp.s
+
+transport.o: transport.cpp.o
+
+.PHONY : transport.o
+
+# target to build an object file
+transport.cpp.o:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/transport.cpp.o
+.PHONY : transport.cpp.o
+
+transport.i: transport.cpp.i
+
+.PHONY : transport.i
+
+# target to preprocess a source file
+transport.cpp.i:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/transport.cpp.i
+.PHONY : transport.cpp.i
+
+transport.s: transport.cpp.s
+
+.PHONY : transport.s
+
+# target to generate assembly for a file
+transport.cpp.s:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/transport.cpp.s
+.PHONY : transport.cpp.s
+
+truck.o: truck.cpp.o
+
+.PHONY : truck.o
+
+# target to build an object file
+truck.cpp.o:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/truck.cpp.o
+.PHONY : truck.cpp.o
+
+truck.i: truck.cpp.i
+
+.PHONY : truck.i
+
+# target to preprocess a source file
+truck.cpp.i:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/truck.cpp.i
+.PHONY : truck.cpp.i
+
+truck.s: truck.cpp.s
+
+.PHONY : truck.s
+
+# target to generate assembly for a file
+truck.cpp.s:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/truck.cpp.s
+.PHONY : truck.cpp.s
 
 # Help Target
 help:
@@ -158,10 +333,29 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... AVS_HW1"
+	@echo "... task"
+	@echo "... transport"
+	@echo "... bus.o"
+	@echo "... bus.i"
+	@echo "... bus.s"
+	@echo "... car.o"
+	@echo "... car.i"
+	@echo "... car.s"
+	@echo "... container.o"
+	@echo "... container.i"
+	@echo "... container.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... random.o"
+	@echo "... random.i"
+	@echo "... random.s"
+	@echo "... transport.o"
+	@echo "... transport.i"
+	@echo "... transport.s"
+	@echo "... truck.o"
+	@echo "... truck.i"
+	@echo "... truck.s"
 .PHONY : help
 
 

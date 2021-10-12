@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/AVS_HW1.dir/main.cpp.o  -o AVS_HW1 
+/usr/bin/c++  -g   CMakeFiles/AVS_HW1.dir/main.cpp.o  -o AVS_HW1  -ltransport.h -ltruck.h -lbus.h -lcar.h -lcontainer.h -ltransport.cpp -ltruck.cpp -lbus.cpp -lcar.cpp -lcontainer.cpp 

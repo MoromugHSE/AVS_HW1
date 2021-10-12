@@ -1,3 +1,4 @@
 /mnt/d/CLion_Projects/AVS_HW1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /mnt/d/CLion_Projects/AVS_HW1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/d/CLion_Projects/AVS_HW1/cmake-build-debug/CMakeFiles/AVS_HW1.dir
+/mnt/d/CLion_Projects/AVS_HW1/cmake-build-debug/CMakeFiles/task.dir
+/mnt/d/CLion_Projects/AVS_HW1/cmake-build-debug/CMakeFiles/transport.dir

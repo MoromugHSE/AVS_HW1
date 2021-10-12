@@ -53,7 +53,8 @@ CMAKE_BINARY_DIR = /mnt/d/CLion_Projects/AVS_HW1/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/AVS_HW1.dir/all
+all: CMakeFiles/task.dir/all
+all: CMakeFiles/transport.dir/all
 
 .PHONY : all
 
@@ -63,36 +64,64 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/AVS_HW1.dir/clean
+clean: CMakeFiles/task.dir/clean
+clean: CMakeFiles/transport.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/AVS_HW1.dir
+# Target rules for target CMakeFiles/task.dir
 
 # All Build rule for target.
-CMakeFiles/AVS_HW1.dir/all:
-	$(MAKE) -f CMakeFiles/AVS_HW1.dir/build.make CMakeFiles/AVS_HW1.dir/depend
-	$(MAKE) -f CMakeFiles/AVS_HW1.dir/build.make CMakeFiles/AVS_HW1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/CLion_Projects/AVS_HW1/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target AVS_HW1"
-.PHONY : CMakeFiles/AVS_HW1.dir/all
+CMakeFiles/task.dir/all: CMakeFiles/transport.dir/all
+	$(MAKE) -f CMakeFiles/task.dir/build.make CMakeFiles/task.dir/depend
+	$(MAKE) -f CMakeFiles/task.dir/build.make CMakeFiles/task.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/CLion_Projects/AVS_HW1/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target task"
+.PHONY : CMakeFiles/task.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/AVS_HW1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/CLion_Projects/AVS_HW1/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/AVS_HW1.dir/all
+CMakeFiles/task.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/CLion_Projects/AVS_HW1/cmake-build-debug/CMakeFiles 9
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/task.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/CLion_Projects/AVS_HW1/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/AVS_HW1.dir/rule
+.PHONY : CMakeFiles/task.dir/rule
 
 # Convenience name for target.
-AVS_HW1: CMakeFiles/AVS_HW1.dir/rule
+task: CMakeFiles/task.dir/rule
 
-.PHONY : AVS_HW1
+.PHONY : task
 
 # clean rule for target.
-CMakeFiles/AVS_HW1.dir/clean:
-	$(MAKE) -f CMakeFiles/AVS_HW1.dir/build.make CMakeFiles/AVS_HW1.dir/clean
-.PHONY : CMakeFiles/AVS_HW1.dir/clean
+CMakeFiles/task.dir/clean:
+	$(MAKE) -f CMakeFiles/task.dir/build.make CMakeFiles/task.dir/clean
+.PHONY : CMakeFiles/task.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/transport.dir
+
+# All Build rule for target.
+CMakeFiles/transport.dir/all:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/depend
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/CLion_Projects/AVS_HW1/cmake-build-debug/CMakeFiles --progress-num=3,4,5,6,7,8,9 "Built target transport"
+.PHONY : CMakeFiles/transport.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/transport.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/CLion_Projects/AVS_HW1/cmake-build-debug/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/transport.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/CLion_Projects/AVS_HW1/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/transport.dir/rule
+
+# Convenience name for target.
+transport: CMakeFiles/transport.dir/rule
+
+.PHONY : transport
+
+# clean rule for target.
+CMakeFiles/transport.dir/clean:
+	$(MAKE) -f CMakeFiles/transport.dir/build.make CMakeFiles/transport.dir/clean
+.PHONY : CMakeFiles/transport.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/task.dir/main.cpp.o  -o ../bin/task  libtransport.a 
