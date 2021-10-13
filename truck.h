@@ -1,7 +1,3 @@
-//
-// Created by morom on 10.10.2021.
-//
-
 #ifndef AVS_HW1_TRUCK_H
 #define AVS_HW1_TRUCK_H
 
@@ -11,9 +7,11 @@ struct truck {
     int max_mass;
 };
 
-void freadTruck(FILE *const& fin, truck *t);
+bool readTruckFromFile(truck *t, FILE *const& fin);
 
-void fprintTruck(FILE *const& fout, const truck& t);
+bool generateTruck(truck *t);
+
+void writeTruckToFile(const truck &t, FILE *const& fout);
 
 
 #endif //AVS_HW1_TRUCK_H

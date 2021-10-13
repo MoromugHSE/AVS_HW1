@@ -1,38 +1,31 @@
 #include "container.h"
-#include "random.h"
 
 #include<cstdio>
 
-void pushBackToContainer(container *cont, const transport& tr) {
-    *(cont->cont[cont->size++]) = tr;
+void pushBackToContainer(container *cont, transport& tr) {
+    cont->cont[cont->size++] = &tr;
 }
 
 bool generateContainer(container *cont, int size) {
+    transport *tr;
     for (int i = 0 ; i < size ; ++i) {
-        transport tr{};
-        tr.volume = randomInt(1, 201);
-        tr.fuel_100km = randomDouble(0.5, 20 + 1e-9);
-        switch (randomInt(0, 3)) {
-            case 0:
-                tr.k = transport::TRUCK;
-                tr.t->max_mass = randomInt(1, 1001);
-                break;
-            case 1:
-                tr.k = transport::BUS;
-                tr.b->max_passengers = randomShort(1, 41);
-                break;
-            case 2:
-                tr.k = transport::CAR;
-                tr.c->max_speed = randomShort(1, 101);
-                break;
-        }
-        pushBackToContainer(cont, tr);
+        tr = new transport();
+        generateTransport(tr);
+        pushBackToContainer(cont, *tr);
     }
     return true;
 }
 
 bool readContainerFromFile(container *cont, int size, FILE *const& fin) {
-
+    transport *tr;
+    for (int i = 0 ; i < size ; ++i) {
+        tr = new transport();
+        if (!readTransportFromFile(tr, fin)) {
+            return false;
+        }
+        pushBackToContainer(cont, *tr);
+    }
+    return true;
 }
 
 bool createContainer(container *cont, FILE *const& fin) {
@@ -53,37 +46,43 @@ double getAverageDistance(container const& cont) {
     for (int i = 0 ; i < cont.size ; ++i) {
         aggregate_distance += getMaxDistance(*(cont.cont[i]));
     }
+    if (cont.size == 0) {
+        return 0;
+    }
     return aggregate_distance / cont.size;
 }
 
 void removeLesserThanAverage(container *cont) {
     double average = getAverageDistance(*cont);
-    container *old_container = cont;
-    cont = new container;
-    for (int i = 0 ; i < old_container->size ; ++i) {
-        if (getMaxDistance(*(old_container->cont[i])) < average) {
-            destroyTransport(old_container->cont[i]);
+    int new_size = 0;
+    for (int i = 0 ; i < cont->size ; ++i) {
+        if (getMaxDistance(*(cont->cont[i])) < average) {
+            destroyTransport(cont->cont[i]);
+            delete cont->cont[i];
         } else {
-            pushBackToContainer(cont, *old_container->cont[i]);
+            cont->cont[new_size++] = cont->cont[i];
+        }
+        // If every element stays on its place, we don't nullify any pointers!
+        if (i + 1 != new_size) {
+            cont->cont[i] = nullptr;
         }
     }
+    cont->size = new_size;
 }
 
 void writeContainerToFile(const container& cont, FILE *const& fout) {
     fprintf(fout, "There are %d elements in container:\n", cont.size);
     for (int i = 0 ; i < cont.size ; ++i) {
         fprintf(fout, "%d: ", i);
-        switch (cont.cont[i]->k) {
-            case transport::TRUCK:
-                fprintTruck(fout, *(cont.cont[i]->t));
-                break;
-            case transport::BUS:
-                fprintBus(fout, *(cont.cont[i]->b));
-                break;
-            case transport::CAR:
-                fprintCar(fout, *(cont.cont[i]->c));
-                break;
-        }
+        writeTransportToFile(*(cont.cont[i]), fout);
     }
     fprintf(fout, "\n");
+}
+
+void destroyContainer(container *cont) {
+    for (int i = 0 ; i < cont->size ; ++i) {
+        destroyTransport(cont->cont[i]);
+        delete cont->cont[i];
+        cont->cont[i] = nullptr;
+    }
 }

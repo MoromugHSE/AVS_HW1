@@ -1,16 +1,12 @@
-#include "transport.h"
-#include "truck.h"
-#include "bus.h"
-#include "car.h"
 #include "container.h"
 
 #include<cstdio>
-#include<cmath>
-#include<cstdlib>
-#include<cstring>
+#include<ctime>
+#include <cstdlib>
 
 int main(int argc, char *argv[]) {
-    auto cont = container{};
+    srand(time(nullptr));
+    container *cont = new container();
     if (argc != 3) {
         printf("Incorrect arguments format!\n"
                "Correct:\n"
@@ -27,11 +23,17 @@ int main(int argc, char *argv[]) {
         printf("File %s is unavailable to write to!", argv[2]);
         return 0;
     }
-    createContainer(&cont, fin);
+    if (!createContainer(cont, fin)) {
+        printf("Bad input file!\n");
+        fprintf(fout, "Bad input file!");
+        return 0;
+    }
     fprintf(fout, "Container before changes:\n");
-    writeContainerToFile(cont, fout);
-    removeLesserThanAverage(&cont);
+    writeContainerToFile(*cont, fout);
+    removeLesserThanAverage(cont);
     fprintf(fout, "Container after changes:\n");
-    writeContainerToFile(cont, fout);
+    writeContainerToFile(*cont, fout);
+    destroyContainer(cont);
+    delete cont;
     return 0;
 }

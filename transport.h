@@ -21,6 +21,12 @@ struct transport {
 
 double getMaxDistance(transport const& tr);
 
+bool readTransportFromFile(transport *tr, FILE *const& fin);
+
+bool generateTransport(transport *tr);
+
+void writeTransportToFile(const transport& tr, FILE *const& fout);
+
 void destroyTransport(transport *tr);
 
 #endif //AVS_HW1_TRANSPORT_H

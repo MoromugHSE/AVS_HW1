@@ -3,9 +3,11 @@
 
 CMakeFiles/transport.dir/bus.cpp.o: ../bus.cpp
 CMakeFiles/transport.dir/bus.cpp.o: ../bus.h
+CMakeFiles/transport.dir/bus.cpp.o: ../random.h
 
 CMakeFiles/transport.dir/car.cpp.o: ../car.cpp
 CMakeFiles/transport.dir/car.cpp.o: ../car.h
+CMakeFiles/transport.dir/car.cpp.o: ../random.h
 
 CMakeFiles/transport.dir/container.cpp.o: ../bus.h
 CMakeFiles/transport.dir/container.cpp.o: ../car.h
@@ -14,12 +16,17 @@ CMakeFiles/transport.dir/container.cpp.o: ../container.h
 CMakeFiles/transport.dir/container.cpp.o: ../transport.h
 CMakeFiles/transport.dir/container.cpp.o: ../truck.h
 
+CMakeFiles/transport.dir/random.cpp.o: ../random.cpp
+CMakeFiles/transport.dir/random.cpp.o: ../random.h
+
 CMakeFiles/transport.dir/transport.cpp.o: ../bus.h
 CMakeFiles/transport.dir/transport.cpp.o: ../car.h
+CMakeFiles/transport.dir/transport.cpp.o: ../random.h
 CMakeFiles/transport.dir/transport.cpp.o: ../transport.cpp
 CMakeFiles/transport.dir/transport.cpp.o: ../transport.h
 CMakeFiles/transport.dir/transport.cpp.o: ../truck.h
 
+CMakeFiles/transport.dir/truck.cpp.o: ../random.h
 CMakeFiles/transport.dir/truck.cpp.o: ../truck.cpp
 CMakeFiles/transport.dir/truck.cpp.o: ../truck.h
 

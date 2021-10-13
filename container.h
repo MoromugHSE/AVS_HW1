@@ -13,7 +13,7 @@ struct container {
     transport *cont[kMaxSize]{};
 };
 
-void pushBackToContainer(container *cont, const transport& tr);
+void pushBackToContainer(container *cont, transport& tr);
 
 bool generateContainer(container *cont, int size);
 
@@ -26,6 +26,8 @@ double getAverageDistance(const container& cont);
 void removeLesserThanAverage(container *cont);
 
 void writeContainerToFile(const container& cont, FILE *const& fout);
+
+void destroyContainer(container *cont);
 
 
 #endif //AVS_HW1_CONTAINER_H

@@ -11,9 +11,11 @@ struct car {
     short int max_speed;
 };
 
-void freadCar(FILE *const& fin, car *c);
+bool readCarFromFile(car *c, FILE *const& fin);
 
-void fprintCar(FILE *const& fout, const car& c);
+bool generateCar(car *c);
+
+void writeCarToFile(const car& c, FILE *const& fout);
 
 
 #endif //AVS_HW1_CAR_H

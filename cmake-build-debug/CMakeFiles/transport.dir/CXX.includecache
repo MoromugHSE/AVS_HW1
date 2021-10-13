@@ -7,12 +7,18 @@
 #IncludeRegexTransform: 
 
 /mnt/d/CLion_Projects/AVS_HW1/bus.h
+cstdio
+-
 
 /mnt/d/CLion_Projects/AVS_HW1/car.h
+cstdio
+-
 
 /mnt/d/CLion_Projects/AVS_HW1/container.cpp
 container.h
 /mnt/d/CLion_Projects/AVS_HW1/container.h
+cstdio
+-
 
 /mnt/d/CLion_Projects/AVS_HW1/container.h
 transport.h
@@ -29,4 +35,6 @@ car.h
 /mnt/d/CLion_Projects/AVS_HW1/car.h
 
 /mnt/d/CLion_Projects/AVS_HW1/truck.h
+cstdio
+-
 

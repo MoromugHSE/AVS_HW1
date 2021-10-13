@@ -7,9 +7,11 @@ struct bus {
     short int max_passengers;
 };
 
-void freadBus(FILE *const& fin, bus *b);
+bool readBusFromFile(bus *b, FILE *const& fin);
 
-void fprintBus(FILE *const& fout, const bus& b);
+bool generateBus(bus *b);
+
+void writeBusToFile(const bus& b, FILE *const& fout);
 
 
 #endif //AVS_HW1_BUS_H
